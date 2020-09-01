@@ -1,2 +1,7 @@
-Une ligne de test git
-Une nouvelle ligne de test git
+<?php
+
+require('controller/sendPosts.php');
+
+listPosts();
+
+
