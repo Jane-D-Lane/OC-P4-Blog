@@ -1,9 +1,11 @@
 <?php $title = "Chapitres - Blog de Jean Forteroche"; ?>
 
-<?php ob_start(); ?>
-<h1>Un billet simple pour l'Alaska</h1>
-<p>Derniers chapitres :</p>
+<?php $titlePage = "Un billet simple pour l'Alaska"; ?>
 
+<?php ob_start(); ?>
+<h2>Derniers chapitres :</h2>
+
+<section id="postsList">
 <?php
 //affichage de chaque post
 while($post = $posts->fetch()) {
@@ -24,6 +26,7 @@ while($post = $posts->fetch()) {
 }
 $posts->closeCursor();
 ?>
+</section>
 
 <?php $content = ob_get_clean(); ?>
 
