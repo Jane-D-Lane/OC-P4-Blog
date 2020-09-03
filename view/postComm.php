@@ -18,7 +18,7 @@
 	</div>
 </section>
 
-<section id="commentsSection">
+<section id="commentSection">
 	<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
 		<div>
 			<label for="author">Votre nom</label><br />
