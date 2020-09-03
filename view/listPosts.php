@@ -8,18 +8,18 @@
 <section id="postsList">
 <?php
 //affichage de chaque post
-while($post = $posts->fetch()) {
+while($eachPost = $posts->fetch()) {
 ?>
 	<div class="news">
 		<h3>
-			<?= htmlspecialchars($post['title']) ?>
-			<em>le <?= $post['creation_date_fr'] ?></em>
+			<?= htmlspecialchars($eachPost['title']) ?>
+			<em>le <?= $eachPost['creation_date_fr'] ?></em>
 		</h3> 
 		<p>
-			<?= nl2br(htmlspecialchars($post['content'])) ?>
+			<?= nl2br(htmlspecialchars($eachPost['content'])) ?>
 			<br />
 			<br />
-			<em><a href='#'>Commentaires</a></em>
+			<em><a href='index.php?action=postComm&amp;id=<?= $eachPost['id'] ?>'>Commentaires</a></em>
 		</p>
 	</div>
 <?php

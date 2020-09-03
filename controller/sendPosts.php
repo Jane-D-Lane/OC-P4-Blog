@@ -9,3 +9,10 @@ function listPosts() {
 	require('view/listPosts.php');
 }
 
+function post() {
+	$postsManager = new PostsManager();
+	$post = $postsManager->getPost($_GET['id']);
+
+	require('view/postComm.php');
+}
+

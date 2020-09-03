@@ -27,3 +27,8 @@ h1, h2, h3 {
 	margin: 10px;
 	padding: 10px;
 }
+
+#postPage {
+	width: 60%;
+	background-color: white;
+} 

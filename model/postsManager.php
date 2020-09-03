@@ -10,4 +10,13 @@ class PostsManager extends Manager
 		$posts = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM postsBlog ORDER BY creation_date DESC LIMIT 0, 6');
 		return $posts;
 	}
+
+	public function getPost($postId) {
+		//récupère un post selon son Id
+		$db = $this->dbConnect();
+		$req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM postsBlog WHERE id = ?');
+		$req->execute(array($postId));
+		$post = $req->fetch();
+		return $post;	
+	}
 }
