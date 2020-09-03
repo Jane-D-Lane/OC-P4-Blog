@@ -19,6 +19,19 @@
 </section>
 
 <section id="commentsSection">
+	<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+		<div>
+			<label for="author">Votre nom</label><br />
+			<input type="text" name="author" id="author">
+		</div>
+		<div>
+			<label for="comment">Votre commentaire</label><br />
+			<textarea name="comment" id="comment"></textarea>
+		</div>
+		<div>
+			<input type="submit" name="Envoyer">
+		</div>
+	</form>
 <?php
 while($comment = $comments->fetch()) {
 ?>

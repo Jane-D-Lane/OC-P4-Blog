@@ -20,4 +20,14 @@ function post() {
 	require('view/postComm.php');
 }
 
+function addComments($postId, $author, $comment) {
+	$commentManager = new CommentManager();
+	$affectedLines = $commentManager->postComments($postId, $author, $comment);
+	if($affectedLines === false) {
+		die('Impossible d\'ajouter le commentaire !');
+	} else {
+		header('Location: index.php?action=postComm&id=' . $postId);
+	}
+}
+
 
