@@ -28,9 +28,18 @@ h1, h2, h3 {
 	padding: 10px;
 }
 
-#postPage {
+#postPage, #commentSection {
 	width: 60%;
 	margin: 0 auto;
-	padding: 10px;
 	background-color: white;
+}
+
+#postPage {
+	padding: 10px;	
+	margin-bottom: 20px;
 } 
+
+#commentSection {
+	padding: 10px;
+
+}
