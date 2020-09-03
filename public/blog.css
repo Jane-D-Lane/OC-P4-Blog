@@ -30,5 +30,6 @@ h1, h2, h3 {
 
 #postPage {
 	width: 60%;
+	margin: 0 auto;
 	background-color: white;
 } 
