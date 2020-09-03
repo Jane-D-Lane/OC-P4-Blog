@@ -1,6 +1,6 @@
 <?php
 
-require('controller/sendPosts.php');
+require('controller/frontendController.php');
 
 try {
 	if(isset($_GET['action'])) {

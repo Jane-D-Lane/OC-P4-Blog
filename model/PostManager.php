@@ -2,7 +2,7 @@
 
 require_once("model/Manager.php");
 
-class PostsManager extends Manager
+class PostManager extends Manager
 {
 	public function getPosts() {
 		//récupère les posts 
