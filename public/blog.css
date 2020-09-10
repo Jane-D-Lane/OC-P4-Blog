@@ -4,6 +4,15 @@ body {
 	margin: 0 auto;
 }
 
+/* Menu */
+
+ul {
+	display: flex;
+	list-style-type: none;
+}
+
+/* En-tête */
+
 header {
 	height: 200px;
 	background-color: white;
@@ -11,6 +20,8 @@ header {
 	flex-direction: column;
 	justify-content: center;
 }
+
+/* Contenu */
 
 h1, h2, h3 {
 	text-align: center;
@@ -43,3 +54,8 @@ h1, h2, h3 {
 	padding: 10px;
 
 }
+
+form {
+	text-align: center;
+}
+
