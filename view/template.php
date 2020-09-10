@@ -7,6 +7,14 @@
 		<title><?= $title ?></title>
 	</head>
 	<body>
+		<nav>
+			<ul>
+				<li><a href="index.php">Accueil</a></li>
+				<li><a href="index.php">Chapitres</a></li>
+				<li><a href="index.php">Espace membre</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
 		<header>
 			<h1><?= $titlePage ?></h1>
 		</header>

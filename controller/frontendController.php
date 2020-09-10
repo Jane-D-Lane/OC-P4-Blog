@@ -2,6 +2,7 @@
 
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
+require_once('model/UserManager.php');
 
 function listPosts() {
 	$postManager = new PostManager();
@@ -29,5 +30,12 @@ function addComments($postId, $author, $comment) {
 		header('Location: index.php?action=postComm&id=' . $postId);
 	}
 }
+
+function getConnect($user) {
+	$userManager = new UserManager();
+	$connect = $userManager->userConnect($user);
+}
+
+function
 
 

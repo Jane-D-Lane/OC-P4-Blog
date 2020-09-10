@@ -22,6 +22,7 @@ try {
 			} else {
 				throw new Exception("Aucun identifant de billet envoyé");
 			}
+
 		}
 	} else {
 		listPosts();

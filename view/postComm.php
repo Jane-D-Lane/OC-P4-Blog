@@ -32,6 +32,7 @@
 			<input type="submit" name="Envoyer">
 		</div>
 	</form>
+	<div class="commentsList">
 <?php
 while($comment = $comments->fetch()) {
 ?>
@@ -45,6 +46,7 @@ while($comment = $comments->fetch()) {
 <?php
 }
 ?>
+	</div>
 </section>
 
 <?php $content = ob_get_clean(); ?>
