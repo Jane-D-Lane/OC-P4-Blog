@@ -23,6 +23,13 @@ try {
 				throw new Exception("Aucun identifant de billet envoyé");
 			}
 
+		} elseif($_GET['action'] == 'register') {
+			if(!empty($_POST['pseudo']) && !empty($_POST['password']) && !empty($_POST['passwordAgain']) && !empty($_POST['email'])) {
+					register($_GET['id'], $_POST['pseudo'], $_POST['password'], $_POST['email']);
+					echo "Votre inscription est valide !";
+			} else {
+					registerForm();
+			}
 		}
 	} else {
 		listPosts();

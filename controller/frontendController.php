@@ -31,11 +31,18 @@ function addComments($postId, $author, $comment) {
 	}
 }
 
-function getConnect($user) {
-	$userManager = new UserManager();
-	$connect = $userManager->userConnect($user);
+function registerForm() {
+	require('view/inscription.php');
 }
 
-function
+function register($pseudo, $password, $email) {
+	$userManager = new UserManager();
+	$userData = $userManager->userRegister($pseudo, $password, $email);
+	if($userData === false) {
+		die('Inscription impossible !');
+	} else {
+		header('Location: inscription.php');
+	};
+}
 
 
