@@ -15,11 +15,10 @@ try {
 		} elseif($_GET['action'] == 'addComment') {
 			commentCheck($postId, $author, $comment);
 		} elseif($_GET['action'] == 'register') {
-			if(!empty($_POST['pseudo']) && !empty($_POST['password']) && !empty($_POST['passwordAgain']) && !empty($_POST['email'])) {
-					register($_GET['id'], $_POST['pseudo'], $_POST['password'], $_POST['email']);
-					echo "Votre inscription est valide !";
+			if(empty($_POST['pseudo'])) {
+				registerForm();
 			} else {
-					registerForm();
+				logCheck($pseudo, $password, $email);
 			}
 		}
 	} else {
