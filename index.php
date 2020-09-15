@@ -13,16 +13,7 @@ try {
 				throw new Exception("Aucun identifiant de billet envoyé");
 			}
 		} elseif($_GET['action'] == 'addComment') {
-			if(isset($_GET['id']) && $_GET['id'] > 0) {
-				if(!empty($_POST['author']) && !empty($_POST['comment'])) {
-					addComments($_GET['id'], $_POST['author'], $_POST['comment']);
-				} else {
-					throw new Exception("Tous les champs ne sont pas remplis !");
-				}
-			} else {
-				throw new Exception("Aucun identifant de billet envoyé");
-			}
-
+			commentCheck($postId, $author, $comment);
 		} elseif($_GET['action'] == 'register') {
 			if(!empty($_POST['pseudo']) && !empty($_POST['password']) && !empty($_POST['passwordAgain']) && !empty($_POST['email'])) {
 					register($_GET['id'], $_POST['pseudo'], $_POST['password'], $_POST['email']);
