@@ -67,7 +67,6 @@ function logCheck($pseudo, $password, $email) {
 function register($pseudo, $password, $email) {
 	$userManager = new UserManager();
 	$userData = $userManager->userRegister($pseudo, $password, $email);
-	return $userData;
 }
 
 
