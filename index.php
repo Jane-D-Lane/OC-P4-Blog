@@ -1,6 +1,8 @@
 <?php
 
-require('controller/frontendController.php');
+require('controller/postController.php');
+require('controller/commentController.php');
+require('controller/userController.php');
 
 try {
 	if(isset($_GET['action'])) {
@@ -9,6 +11,7 @@ try {
 		} elseif($_GET['action'] == 'postComm') {
 			if(isset($_GET['id']) && $_GET['id'] > 0) {
 				post();
+				comment();
 			} else {
 				throw new Exception("Aucun identifiant de billet envoyé");
 			}
