@@ -11,7 +11,6 @@ try {
 		} elseif($_GET['action'] == 'postComm') {
 			if(isset($_GET['id']) && $_GET['id'] > 0) {
 				post();
-				comment();
 			} else {
 				throw new Exception("Aucun identifiant de billet envoyé");
 			}
@@ -29,7 +28,7 @@ try {
 	}
 }
 catch(Exception $e) {
-	die('Erreur : ' .$e->getMEssage());
+	die('Erreur : ' .$e->getMessage());
 }
 
 

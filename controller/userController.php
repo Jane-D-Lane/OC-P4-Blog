@@ -10,7 +10,7 @@ function registerForm() {
 // Contrôle les champs de l'inscription
 function logCheck($pseudo, $password, $email) {
 	if(!empty($_POST['pseudo']) && !empty($_POST['password']) && !empty($_POST['passwordAgain']) && !empty($_POST['email'])) {
-		register($_GET['id'], $_POST['pseudo'], $_POST['password'], $_POST['email']);
+		register($_POST['pseudo'], $_POST['password'], $_POST['email']);
 		require('view/inscription.php');
 		echo 'Inscription validée !';
 	} else {
@@ -22,4 +22,9 @@ function logCheck($pseudo, $password, $email) {
 function register($pseudo, $password, $email) {
 	$userManager = new UserManager();
 	$userData = $userManager->userRegister($pseudo, $password, $email);
+	if($userData === false) {
+		die('Impossible de finaliser l\'inscription : ' .$pseudo);
+	} else {
+		header('Location: index.php?action=register');
+	}
 }
