@@ -20,6 +20,14 @@ class PostManager extends Manager
 		return $post;	
 	}
 
+	// Créer un billet
+	public function createPost($title, $content) {
+		$db = $this->dbConnect();
+		$req = $db->prepare('INSERT INTO postsBlog(title, content, creation_date) VALUES (?, ?, NOW())');
+		$newPost = $req->execute(array($title, $content));
+		return $newPost;
+	}
+
 	// Supprimer un billet
 	public function deletePost($postId) {
 		$db = $this->dbConnect();

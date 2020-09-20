@@ -14,6 +14,22 @@ function adminPage() {
 	require('view/admin.php');
 }
 
+// Affiche la page de création de billet
+function creationForm() {
+	require('view/createPost.php');
+}
+
+// Créer un billet 
+function postCreation() {
+	$postManager = new PostManager();
+	$newPost = $postManager->createPost($_POST['title'], $_POST['content']);
+	if($newPost === false) {
+		die('Impossible de créer le chapitre');
+	} else {
+		header('Location: index.php?action=admin');
+	}
+}
+
 // Supprimer un billet
 function postDelete() {
 	$postManager = new PostManager();

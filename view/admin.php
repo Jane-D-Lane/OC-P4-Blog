@@ -22,7 +22,7 @@ while($eachPost = $posts->fetch()) {
 $posts->closeCursor();
 ?> 
 </br>
-<div id="postCreation"><a href="#">Créer un nouveau billet</a></div></br>
+<div id="postCreation"><a href="index.php?action=createPost">Créer un nouveau billet</a></div></br>
 
 <p>Liste des commentaires :</p>
 <?php
