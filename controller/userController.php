@@ -8,23 +8,17 @@ function registerForm() {
 }
 
 // Contrôle les champs de l'inscription
-function logCheck($pseudo, $password, $email) {
-	if(!empty($_POST['pseudo']) && !empty($_POST['password']) && !empty($_POST['passwordAgain']) && !empty($_POST['email'])) {
-		register($_POST['pseudo'], $_POST['password'], $_POST['email']);
-		require('view/inscription.php');
-		echo 'Inscription validée !';
+function logCheck($pseudo, $pass, $email) {
+	if(!empty($_POST['pseudo']) && !empty($_POST['pass']) && !empty($_POST['email'])) {
+		register($_POST['pseudo'], $_POST['pass'], $_POST['email']);
 	} else {
-			echo 'Erreur : Tous les champs ne sont pas remplis !';
+		echo 'Erreur : Tous les champs ne sont pas remplis !';
 	}
 }
 
 // Enregistre un nouveau membre
-function register($pseudo, $password, $email) {
+function register($pseudo, $pass, $email) {
 	$userManager = new UserManager();
-	$userData = $userManager->userRegister($pseudo, $password, $email);
-	if($userData === false) {
-		die('Impossible de finaliser l\'inscription : ' .$pseudo);
-	} else {
-		header('Location: index.php?action=register');
-	}
+	$userData = $userManager->userRegister($pseudo, $pass, $email);
+	require('view/inscription.php');
 }

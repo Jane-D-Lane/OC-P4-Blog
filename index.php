@@ -3,6 +3,7 @@
 require('controller/postController.php');
 require('controller/commentController.php');
 require('controller/userController.php');
+require('controller/adminController.php');
 
 try {
 	if(isset($_GET['action'])) {
@@ -17,11 +18,13 @@ try {
 		} elseif($_GET['action'] == 'addComment') {
 			commentCheck($postId, $author, $comment);
 		} elseif($_GET['action'] == 'register') {
-			if(empty($_POST['pseudo'])) {
-				registerForm();
+			if(isset($_POST['inscription'])) {
+				logCheck($pseudo, $pass, $email);
 			} else {
-				logCheck($pseudo, $password, $email);
+				registerForm();
 			}
+		} elseif($_GET['action'] == 'admin') {
+			adminPage();
 		}
 	} else {
 		listPosts();

@@ -11,19 +11,19 @@
 		<input type="text" name="pseudo" />
 	</div>
 	<div>
-		<label for="password">Mot de passe</label>
-		<input type="password" name="password" />	
+		<label for="pass">Mot de passe</label>
+		<input type="password" name="pass" />	
 	</div>
 	<div>
-		<label for="passwordAgain">Retapez votre mot de passe</label>
-		<input type="password" name="passwordAgain" />
+		<label for="passAgain">Retapez votre mot de passe</label>
+		<input type="password" name="passAgain" />
 	</div>
 	<div>
 		<label for="email">Adresse email</label>
 		<input type="email" name="email" />
 	</div>
 	<div>
-		<input type="submit" name="S'inscrire">
+		<input type="submit" name="inscription" value="S'inscrire">
 	</div>
 </form>
 

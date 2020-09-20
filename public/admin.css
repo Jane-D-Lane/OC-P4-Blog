@@ -1,0 +1,26 @@
+/* Page principale admin */
+table {
+	border-collapse: collapse;
+}
+
+.titlePost {
+	width: 300px;
+}
+
+td {
+	width: 150px;
+	border: 1px solid black;
+	text-align: center;
+	background-color: #ebf4fb;
+}
+
+#postCreation {
+	border: 1px solid black;
+	width: 300px;
+	height: 50px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #ebf4fb;
+}

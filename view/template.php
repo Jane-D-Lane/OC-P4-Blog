@@ -4,6 +4,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="public/blog.css">
+		<link rel="stylesheet" type="text/css" href="public/admin.css">
 		<title><?= $title ?></title>
 	</head>
 	<body>
@@ -12,7 +13,7 @@
 				<li><a href="index.php">Accueil</a></li>
 				<li><a href="index.php">Chapitres</a></li>
 				<li><a href="index.php?action=register">Espace membre</a></li>
-				<li><a href="#">Espace admin</a></li>
+				<li><a href="index.php?action=admin">Espace admin</a></li>
 				<li><a href="#">Contact</a></li>
 			</ul>
 		</nav>
