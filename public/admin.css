@@ -9,6 +9,7 @@ table {
 
 td {
 	width: 150px;
+	height: 50px;
 	border: 1px solid black;
 	text-align: center;
 	background-color: #ebf4fb;
@@ -23,4 +24,8 @@ td {
 	flex-direction: column;
 	justify-content: center;
 	background-color: #ebf4fb;
+}
+
+.commentContent {
+	width: 300px;
 }

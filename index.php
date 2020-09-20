@@ -9,20 +9,38 @@ try {
 	if(isset($_GET['action'])) {
 		if($_GET['action'] == 'listPosts') {
 			listPosts();
+
+		} elseif($_GET['action'] == 'deletePost') {
+			if(isset($_GET['id']) && $_GET['id'] > 0) {
+				postDelete();
+			} else {
+				throw new Exception("Aucun identifiant de billet envoyé");
+			}
+
 		} elseif($_GET['action'] == 'postComm') {
 			if(isset($_GET['id']) && $_GET['id'] > 0) {
 				post();
 			} else {
 				throw new Exception("Aucun identifiant de billet envoyé");
 			}
+
 		} elseif($_GET['action'] == 'addComment') {
 			commentCheck($postId, $author, $comment);
+
+		} elseif($_GET['action'] == 'deleteComm') {
+			if(isset($_GET['id']) && $_GET['id'] > 0) {
+				commDelete();
+			} else {
+				throw new Exception("Aucun identifiant de billet envoyé");
+			}
+
 		} elseif($_GET['action'] == 'register') {
 			if(isset($_POST['inscription'])) {
 				logCheck($pseudo, $pass, $email);
 			} else {
 				registerForm();
 			}
+
 		} elseif($_GET['action'] == 'admin') {
 			adminPage();
 		}

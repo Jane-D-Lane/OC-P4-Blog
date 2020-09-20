@@ -13,9 +13,8 @@ while($eachPost = $posts->fetch()) {
 	<table>
 		<tr>
 			<td class="titlePost"><h3><a href="#"><?= htmlspecialchars($eachPost['title']) ?></a></h3></td>
-			<td><a href="#">Voir commentaires</a></td>
 			<td><a href="#">Modifier</a></td>
-			<td><a href="#">Supprimer</a></td>
+			<td><a href="index.php?action=deletePost&amp;id=<?= $eachPost['id'] ?>">Supprimer</a></td>
 		</tr>
 	</table>
 <?php
@@ -23,7 +22,25 @@ while($eachPost = $posts->fetch()) {
 $posts->closeCursor();
 ?> 
 </br>
-<div id="postCreation"><a href="#">Créer un nouveau billet</a></div>
+<div id="postCreation"><a href="#">Créer un nouveau billet</a></div></br>
+
+<p>Liste des commentaires :</p>
+<?php
+//affichage liste des commentaires
+while($eachComment = $allComments->fetch()) {
+?>
+	<table>
+		<tr>
+			<td><?= htmlspecialchars($eachComment['author']) ?></td>
+			<td class="commentContent"><?= nl2br(htmlspecialchars($eachComment['comment'])) ?></td>
+			<td><?= $eachComment['comment_date_fr'] ?></td>
+			<td><a href="index.php?action=deleteComm&amp;id=<?= $eachComment['id'] ?>">Supprimer</a></td>
+		</tr>
+	</table>
+<?php
+}
+$allComments->closeCursor();
+?>
 
 <?php $content = ob_get_clean(); ?>
 

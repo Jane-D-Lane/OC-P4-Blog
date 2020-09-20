@@ -20,5 +20,6 @@ function logCheck($pseudo, $pass, $email) {
 function register($pseudo, $pass, $email) {
 	$userManager = new UserManager();
 	$userData = $userManager->userRegister($pseudo, $pass, $email);
-	require('view/inscription.php');
+
+	header('Location: index.php?action=register');
 }
