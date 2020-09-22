@@ -28,6 +28,14 @@ class PostManager extends Manager
 		return $newPost;
 	}
 
+	// Modifier un billet
+	public function updatePost($title, $content, $postId) {
+		$db = $this->dbConnect();
+		$req = $db->prepare('UPDATE postsBlog SET title = ?, content = ? WHERE id = ?');
+		$req->execute(array($title, $content, $postId));
+		return $req;
+	}
+
 	// Supprimer un billet
 	public function deletePost($postId) {
 		$db = $this->dbConnect();

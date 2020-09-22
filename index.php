@@ -9,11 +9,19 @@ try {
 	if(isset($_GET['action'])) {
 		if($_GET['action'] == 'listPosts') {
 			listPosts();
+
 		} elseif($_GET['action'] == 'createPost') {
 			if(isset($_POST['creation'])) {
 				postCreation();
 			} else {
 				creationForm();
+			}
+
+		} elseif($_GET['action'] == 'updatePost') {
+			if(isset($_POST['modification'])) {
+				postUpdate();
+			} else { 
+				postUpdateView();
 			}
 		} elseif($_GET['action'] == 'deletePost') {
 			if(isset($_GET['id']) && $_GET['id'] > 0) {

@@ -30,6 +30,26 @@ function postCreation() {
 	}
 }
 
+// Afficher un billet pour le modifier
+function postUpdateView() {
+	$postManager = new PostManager();
+	$post = $postManager->getPost($_GET['id']);
+
+	require('view/updatePost.php');
+}
+
+// Modifier un billet
+function postUpdate() {
+	if (!empty($_POST['title']) && !empty($_POST['content'])) {
+		$postManager = new PostManager();
+		$updatePost = $postManager->updatePost($_POST['title'], $_POST['content'], $_GET['id']);
+
+		header('Location : index.php?action=admin');
+	} else {
+		echo "Tous les champs ne sont pas remplis !"; 
+	}
+}
+
 // Supprimer un billet
 function postDelete() {
 	$postManager = new PostManager();
