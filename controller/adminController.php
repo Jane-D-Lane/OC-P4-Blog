@@ -11,7 +11,7 @@ function adminPage() {
 	$posts = $postManager->getPosts();
 	$allComments = $commentManager->getAllComments();
 	
-	require('view/admin.php');
+	require('view/adminView/admin.php');
 }
 
 // Affiche le contenu d'un billet
@@ -19,12 +19,12 @@ function postAdminView() {
 	$postManager = new PostManager();
 	$post = $postManager->getPost($_GET['id']);
 
-	require('view/postAdminView.php');
+	require('view/adminView/postAdminView.php');
 }
 
 // Affiche la page de création de billet
 function creationForm() {
-	require('view/createPost.php');
+	require('view/adminView/createPost.php');
 }
 
 // Créer un billet 
@@ -43,7 +43,7 @@ function postUpdateView() {
 	$postManager = new PostManager();
 	$post = $postManager->getPost($_GET['id']);
 
-	require('view/updatePost.php');
+	require('view/adminView/updatePost.php');
 }
 
 // Modifier un billet
@@ -52,7 +52,7 @@ function postUpdate() {
 		$postManager = new PostManager();
 		$updatePost = $postManager->updatePost($_POST['title'], $_POST['content'], $_GET['id']);
 		
-		header('Location : index.php?action=postAdminView');
+		header('Location : index.php?action=admin');
 	} else {
 		echo "Tous les champs ne sont pas remplis !"; 
 	}

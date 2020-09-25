@@ -4,7 +4,7 @@ require_once('model/UserManager.php');
 
 // Affiche la page d'inscription
 function registerForm() {
-	require('view/inscription.php');
+	require('view/userView/inscription.php');
 }
 
 // Contrôle les champs de l'inscription
