@@ -10,6 +10,9 @@ try {
 		if($_GET['action'] == 'listPosts') {
 			listPosts();
 
+		} elseif($_GET['action'] == 'postAdminView') {
+			postAdminView();
+
 		} elseif($_GET['action'] == 'createPost') {
 			if(isset($_POST['creation'])) {
 				postCreation();

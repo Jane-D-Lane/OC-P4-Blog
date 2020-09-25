@@ -12,7 +12,7 @@ while($eachPost = $posts->fetch()) {
 ?>
 	<table>
 		<tr>
-			<td class="titlePost"><h3><a href="#"><?= htmlspecialchars($eachPost['title']) ?></a></h3></td>
+			<td class="titlePost"><h3><a href="index.php?action=postAdminView&amp;id=<?= $eachPost['id'] ?>"><?= htmlspecialchars($eachPost['title']) ?></a></h3></td>
 			<td><a href="index.php?action=updatePost&amp;id=<?= $eachPost['id'] ?>">Modifier</a></td>
 			<td><a href="index.php?action=deletePost&amp;id=<?= $eachPost['id'] ?>">Supprimer</a></td>
 		</tr>

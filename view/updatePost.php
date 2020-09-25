@@ -7,7 +7,7 @@
 <p><a href="index.php?action=admin">Retour à la page principale</a></p>
 
 <section id="creationSection">
-	<form action="index.php?action=updatePost" method="post">
+	<form action="index.php?action=updatePost&amp;id=<?= $post['id'] ?>" method="post">
 		<div>
 			<label for="title">Titre</label></br>
 			<input size="50" type="text" name="title" id="title" value="<?= $post['title'] ?>">
