@@ -50,6 +50,9 @@ try {
 				throw new Exception("Aucun identifiant de billet envoyé");
 			}
 
+		} elseif($_GET['action'] == 'addFlag') {
+			addFlag();
+
 		} elseif($_GET['action'] == 'register') {
 			if(isset($_POST['inscription'])) {
 				logCheck($pseudo, $pass, $email);

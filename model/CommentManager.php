@@ -32,6 +32,14 @@ class CommentManager extends Manager
 		$db = $this->dbConnect();
 		$req = $db->prepare('DELETE FROM commentsBlog WHERE id = ?');
 		$req->execute(array($commentId));
-		return $delete;
+		return $req;
+	}
+
+	// Signaler un commentaire 
+	public function flag($commId) {
+		$db = $this->dbConnect();
+		$req = $db->prepare('UPDATE commentsBlog SET flag = true WHERE id = ?');
+		$req->execute(array($commId));
+		return $req;
 	}
 }

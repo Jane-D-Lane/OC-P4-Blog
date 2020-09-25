@@ -26,3 +26,10 @@ function addComments($postId, $author, $comment) {
 		header('Location: index.php?action=postComm&id=' . $postId);
 	}
 }
+
+// Signaler un commentaire pour l'admin
+function addFlag($commId) {
+	$commentManager = new CommentManager();
+	$flagComm = $commentManager->flag($_GET['id']);
+	
+}
