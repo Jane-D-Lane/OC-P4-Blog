@@ -28,8 +28,8 @@ function addComments($postId, $author, $comment) {
 }
 
 // Signaler un commentaire pour l'admin
-function addFlag($commId) {
+function addFlag() {
 	$commentManager = new CommentManager();
 	$flagComm = $commentManager->flag($_GET['id']);
-	
+	echo 'Commentaire signalé !';
 }

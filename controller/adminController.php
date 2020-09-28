@@ -48,13 +48,12 @@ function postUpdateView() {
 
 // Modifier un billet
 function postUpdate() {
-	if (!empty($_POST['title']) && !empty($_POST['content'])) {
-		$postManager = new PostManager();
-		$updatePost = $postManager->updatePost($_POST['title'], $_POST['content'], $_GET['id']);
-		
-		header('Location : index.php?action=admin');
+	$postManager = new PostManager();
+	$updatePost = $postManager->updatePost($_POST['title'], $_POST['content'], $_GET['id']);
+	if($updatePost === false) {
+		die('Impossible de modifier le chapitre');
 	} else {
-		echo "Tous les champs ne sont pas remplis !"; 
+		header('Location: index.php?action=admin');
 	}
 }
 

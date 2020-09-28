@@ -35,6 +35,12 @@ while($eachComment = $allComments->fetch()) {
 			<td class="commentContent"><?= nl2br(htmlspecialchars($eachComment['comment'])) ?></td>
 			<td><?= $eachComment['comment_date_fr'] ?></td>
 			<td><a href="index.php?action=deleteComm&amp;id=<?= $eachComment['id'] ?>">Supprimer</a></td>
+<?php
+if($eachComment['flag'] == true) {
+	?><td class="flag" style="color:red">Signalé !</td>
+<?php
+}
+?>		
 		</tr>
 	</table>
 <?php
