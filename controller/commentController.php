@@ -9,7 +9,7 @@ function commentCheck($postId, $author, $comment) {
 		if(!empty($_POST['author']) && !empty($_POST['comment'])) {
 			addComments($_GET['id'], $_POST['author'], $_POST['comment']);
 		} else {
-		echo 'Erreur : Tous les champs ne sont pas remplis.';
+			echo 'Erreur : Tous les champs ne sont pas remplis.';
 		}
 	} else {
 		echo 'Erreur : Aucun identifiant de billet envoyé.';

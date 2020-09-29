@@ -55,7 +55,7 @@ try {
 
 		} elseif($_GET['action'] == 'register') {
 			if(isset($_POST['inscription'])) {
-				logCheck($pseudo, $pass, $email);
+				logCheck($pseudo, $pass, $passAgain, $email);
 			} else {
 				registerForm();
 			}
