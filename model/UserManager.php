@@ -19,4 +19,13 @@ class UserManager extends Manager
 		$userData = $req->execute(array($pseudo, $pass, $email));
 		return $userData;
 	}
+
+	// Récupère les infos du membre inscrit
+	public function userToConnect($pseudo) {
+		$db = $this->dbConnect();
+		$req = $db->prepare('SELECT id, pass FROM users WHERE pseudo = ?');
+		$req->execute(array($pseudo));
+		$userData = $req->fetch();
+		return $userData;
+	}
 }

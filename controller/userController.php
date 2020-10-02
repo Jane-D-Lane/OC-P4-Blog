@@ -19,6 +19,7 @@ function logCheck($pseudo, $pass, $passAgain, $email) {
 		} else {
 			if($_POST['pass'] == $_POST['passAgain']) {
 				register($_POST['pseudo'], password_hash($_POST['pass'], PASSWORD_DEFAULT), $_POST['email']);
+				echo 'Inscription valide !';
 			} else {
 				require("view/userView/inscription.php");
 				echo 'Erreur : Retapez votre mot de passe';
@@ -36,4 +37,30 @@ function register($pseudo, $pass, $email) {
 	$userData = $userManager->userRegister($pseudo, $pass, $email);
 
 	header('Location: index.php?action=register');
+}
+
+// Affiche la page de connexion 
+function connectionForm() {
+	require('view/userView/login.php');
+}
+
+// Se connecte à une session
+function getConnect() {
+	$userManager = new UserManager();
+	$userData = $userManager->userToConnect($_POST['pseudo']);
+	$isPassValid = password_verify($_POST['pass'], $userData['pass']);
+	if(!$userData) {
+		echo 'Mauvais identifiant ou mot de passe.';
+	} else {
+		if($isPassValid) {
+			session_start();
+			$_SESSSION['id'] = $userData['id'];
+			$_SESSION['pseudo'] = $_POST['pseudo'];
+			echo 'Vous êtes connecté !';
+		} else {
+			echo 'Mauvais identifiant ou mot de passe.';
+		}
+	}
+
+
 }

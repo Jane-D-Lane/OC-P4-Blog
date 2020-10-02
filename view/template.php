@@ -12,9 +12,16 @@
 			<ul>
 				<li><a href="index.php">Accueil</a></li>
 				<li><a href="index.php">Chapitres</a></li>
-				<li><a href="index.php?action=register">Espace membre</a></li>
+				<li><a href="index.php?action=connection">Espace membre</a></li>
 				<li><a href="index.php?action=admin">Espace admin</a></li>
 				<li><a href="#">Contact</a></li>
+<?php
+if(isset($_SESSION['id']) AND isset($_SESSION['pseudo'])) {
+?>
+				<li>Bonjour <?= $_SESSION['pseudo'] ?></li>
+<?php
+}
+?>
 			</ul>
 		</nav>
 		<header>

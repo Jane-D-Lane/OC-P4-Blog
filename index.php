@@ -52,7 +52,12 @@ try {
 
 		} elseif($_GET['action'] == 'addFlag') {
 			addFlag();
-
+		} elseif($_GET['action'] == 'connection') {
+			if(isset($_POST['goConnect'])) {
+				getConnect();
+			} else {
+				connectionForm();
+			}
 		} elseif($_GET['action'] == 'register') {
 			if(isset($_POST['inscription'])) {
 				logCheck($pseudo, $pass, $passAgain, $email);
