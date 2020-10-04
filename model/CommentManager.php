@@ -42,4 +42,12 @@ class CommentManager extends Manager
 		$req->execute(array($commId));
 		return $req;
 	}
+
+	// Annuler le signalement d'un commentaire
+	public function unFlag($commId) {
+		$db = $this->dbConnect();
+		$req = $db->prepare('UPDATE commentsBlog SET flag = false WHERE id = ?');
+		$req->execute(array($commId));
+		return $req;
+	}
 }

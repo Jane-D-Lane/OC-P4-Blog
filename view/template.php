@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,9 +20,10 @@
 				<li><a href="index.php?action=admin">Espace admin</a></li>
 				<li><a href="#">Contact</a></li>
 <?php
-if(isset($_SESSION['id']) AND isset($_SESSION['pseudo'])) {
+if(isset($_SESSION['id'])) {
 ?>
-				<li>Bonjour <?= $_SESSION['pseudo'] ?></li>
+				<li id="userMessage">Bonjour <?= $_SESSION['pseudo'] ?></li>
+				<li><a href="index.php?action=logOut">Deconnexion</a></li>
 <?php
 }
 ?>

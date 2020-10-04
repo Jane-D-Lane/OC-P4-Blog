@@ -4,7 +4,7 @@ require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 
 // Contrôle les champs d'un commentaire
-function commentCheck($postId, $author, $comment) {
+function commentCheck() {
 	if(isset($_GET['id']) && $_GET['id'] > 0) {
 		if(!empty($_POST['author']) && !empty($_POST['comment'])) {
 			addComments($_GET['id'], $_POST['author'], $_POST['comment']);
@@ -32,4 +32,11 @@ function addFlag() {
 	$commentManager = new CommentManager();
 	$flagComm = $commentManager->flag($_GET['id']);
 	echo 'Commentaire signalé !';
+}
+
+// Annuler le signalement d'un commentaire
+function removeFlag() {
+	$commentManager = new CommentManager();
+	$unflagComm = $commentManager->unFlag($_GET['id']);
+	echo 'Commentaire non signalé !';
 }

@@ -26,6 +26,7 @@ try {
 			} else { 
 				postUpdateView();
 			}
+
 		} elseif($_GET['action'] == 'deletePost') {
 			if(isset($_GET['id']) && $_GET['id'] > 0) {
 				postDelete();
@@ -41,7 +42,7 @@ try {
 			}
 
 		} elseif($_GET['action'] == 'addComment') {
-			commentCheck($postId, $author, $comment);
+			commentCheck();
 
 		} elseif($_GET['action'] == 'deleteComm') {
 			if(isset($_GET['id']) && $_GET['id'] > 0) {
@@ -52,15 +53,22 @@ try {
 
 		} elseif($_GET['action'] == 'addFlag') {
 			addFlag();
+		} elseif($_GET['action'] == 'removeFlag') {
+			removeFlag();
+
 		} elseif($_GET['action'] == 'connection') {
 			if(isset($_POST['goConnect'])) {
 				getConnect();
 			} else {
 				connectionForm();
 			}
+
+		} elseif($_GET['action'] == 'logOut') {
+			logOut();
+
 		} elseif($_GET['action'] == 'register') {
 			if(isset($_POST['inscription'])) {
-				logCheck($pseudo, $pass, $passAgain, $email);
+				logCheck();
 			} else {
 				registerForm();
 			}
@@ -68,6 +76,7 @@ try {
 		} elseif($_GET['action'] == 'admin') {
 			adminPage();
 		}
+
 	} else {
 		listPosts();
 	}

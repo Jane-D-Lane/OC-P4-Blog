@@ -29,13 +29,18 @@ function creationForm() {
 
 // Créer un billet 
 function postCreation() {
-	$postManager = new PostManager();
-	$newPost = $postManager->createPost($_POST['title'], $_POST['content']);
-	if($newPost === false) {
-		die('Impossible de créer le chapitre');
+	if(!empty($_POST['title']) && !empty($_POST['content'])) {
+		$postManager = new PostManager();
+		$newPost = $postManager->createPost($_POST['title'], $_POST['content']);
+		if($newPost === false) {
+			die('Impossible de créer le chapitre');
+		} else {
+			header('Location: index.php?action=admin');
+		}
 	} else {
-		header('Location: index.php?action=admin');
-	}
+		require('view/adminView/createPost.php');
+		echo 'Erreur : Tous les champs ne sont pas remplis.';
+	} 
 }
 
 // Afficher un billet pour le modifier

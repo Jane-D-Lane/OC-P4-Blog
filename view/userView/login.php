@@ -19,11 +19,6 @@
 	</div>
 </form>
 <p class="loginPage">Pas encore inscrit ? <a href="index.php?action=register">Inscrivez-vous !</a></p>
-<?php
-if(isset($_SESSION['id']) AND isset($_SESSION['pseudo'])) {
-	echo 'Bonjour ' . $_SESSION['pseudo'];
-}
-?>
 
 <?php $content = ob_get_clean(); ?>
 

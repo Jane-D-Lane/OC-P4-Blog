@@ -25,6 +25,10 @@ a:hover {
 	color: blue;
 }
 
+#userMessage {
+	text-align: right;
+}
+
 /* En-tête */
 
 header {

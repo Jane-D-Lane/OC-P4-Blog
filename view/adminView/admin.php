@@ -37,7 +37,7 @@ while($eachComment = $allComments->fetch()) {
 			<td><a href="index.php?action=deleteComm&amp;id=<?= $eachComment['id'] ?>">Supprimer</a></td>
 <?php
 if($eachComment['flag'] == true) {
-	?><td class="flag" style="color:red">Signalé !</td>
+	?><td class="flag" style="color:red"><a href="index.php?action=removeFlag&amp;id=<?= $eachComment['id'] ?>">Signalé !</a></td>
 <?php
 }
 ?>		
