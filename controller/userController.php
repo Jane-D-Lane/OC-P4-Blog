@@ -75,4 +75,9 @@ function logOut() {
 	echo 'Déconnexion !';
 }
 
+// Affiche la page d'accès interdit
+function access() {
+	require('view/userView/nonAccess.php');
+}
+
 

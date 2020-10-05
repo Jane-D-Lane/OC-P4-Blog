@@ -12,15 +12,18 @@
 			<label for="title">Titre</label></br>
 			<input size="50" type="text" name="title" id="title">
 		</div>
-		<div>
 			<label for="content">Contenu</label></br>
-			<textarea rows="20" cols="100" name="content" id="content"></textarea> 
+		<div class="textarea">
+			<textarea id="mytextarea" name="content"></textarea>
 		</div>
 		<div>
 			<input type="submit" name="creation" value="Valider">
 		</div>
 	</form>
 </section>
+    <form method="post">
+      
+    </form>
 
 <?php $content = ob_get_clean(); ?>
 

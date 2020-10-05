@@ -1,10 +1,30 @@
+html {
+	height: 100%;
+}
+
 body {
 	background-color: #c6d8f9;
-	width: 70%;
+	width: 100%;
+	height: 100%;
+	margin-right: 100px;
+	margin-left: 100px;
+	position: relative;
 	margin: 0 auto;
 }
 
+#main {
+	min-height: 100%;
+	position: relative;
+}
+
 /* Menu */
+
+nav {
+	position: fixed;
+	z-index: 3;
+	background-color: white;
+	width: 100%;
+}
 
 ul {
 	display: flex;
@@ -87,4 +107,22 @@ form {
 
 .loginPage a {
 	color: blue;
+}
+
+/* Pied-de-page */
+
+#footer {
+	display: flex;
+	justify-content: space-between;
+	background-color: grey;
+	color: white;
+	width: 100%;	
+	height: 50px;
+	position: absolute;
+	bottom: 0;
+}
+
+footer p {
+	padding-left: 20px;
+	padding-right: 20px;
 }

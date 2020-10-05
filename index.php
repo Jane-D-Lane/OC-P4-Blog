@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require('controller/postController.php');
 require('controller/commentController.php');
 require('controller/userController.php');
@@ -74,7 +76,11 @@ try {
 			}
 
 		} elseif($_GET['action'] == 'admin') {
-			adminPage();
+			if($_SESSION['pseudo'] == 'admin') {
+				adminPage();
+			} else {
+				access();
+			}		
 		}
 
 	} else {

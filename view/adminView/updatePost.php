@@ -12,9 +12,9 @@
 			<label for="title">Titre</label></br>
 			<input size="50" type="text" name="title" id="title" value="<?= $post['title'] ?>">
 		</div>
-		<div>
 			<label for="content">Contenu</label></br>
-			<textarea rows="20" cols="100" name="content" id="content"><?= $post['content'] ?></textarea> 
+		<div class="textarea">		
+			<textarea id="mytextarea" name="content"><?= $post['content'] ?></textarea> 
 		</div>
 		<div>
 			<input type="submit" name="modification" value="Modifier">

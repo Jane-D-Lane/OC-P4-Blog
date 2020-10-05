@@ -31,3 +31,8 @@ td {
 }
 
 /* Page de création de billet */
+
+.textarea {
+	display: flex;
+	justify-content: center;
+}
