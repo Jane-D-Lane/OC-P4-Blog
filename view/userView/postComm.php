@@ -6,7 +6,7 @@
 
 <?php ob_start(); ?>
 
-<p><a href="index.php">Retour à la liste des chapitres</a></p>
+<p class="retour"><a href="index.php">Retour à la liste des chapitres</a></p>
 
 <section id="postPage">
 	<div class="new">
@@ -43,10 +43,10 @@ if(isset($_SESSION['pseudo'])) {
 }
 ?>
 
+<section id="commentSection">
 <?php
 while($comment = $comments->fetch()) {
 ?>
-<section id="commentSection">
 		<p>
 			<strong><?= htmlspecialchars($comment['author']) ?></strong>
 			<em>le <?= $comment['comment_date_fr'] ?></em>
@@ -58,7 +58,6 @@ while($comment = $comments->fetch()) {
 <?php
 }
 ?>
-	</div>
 </section>
 
 <?php $content = ob_get_clean(); ?>

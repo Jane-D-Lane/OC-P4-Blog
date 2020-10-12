@@ -1,4 +1,8 @@
 /* Page principale admin */
+#adminPage {
+	margin-left: 50px;
+}
+
 table {
 	border-collapse: collapse;
 }
@@ -30,9 +34,15 @@ td {
 	width: 300px;
 }
 
+.retour {
+	margin-left: 50px;
+}
+
 /* Page de création de billet */
 
 .textarea {
 	display: flex;
 	justify-content: center;
 }
+
+

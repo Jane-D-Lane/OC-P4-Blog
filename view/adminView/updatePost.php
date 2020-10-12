@@ -4,7 +4,7 @@
 
 <?php ob_start(); ?>
 
-<p><a href="index.php?action=admin">Retour à la page principale</a></p>
+<p class="retour"><a href="index.php?action=admin">Retour à la page principale</a></p>
 
 <section id="creationSection">
 	<form action="index.php?action=updatePost&amp;id=<?= $post['id'] ?>" method="post">

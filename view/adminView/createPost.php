@@ -4,8 +4,7 @@
 
 <?php ob_start(); ?>
 
-<p><a href="index.php?action=admin">Retour à la page principale</a></p>
-
+<p class="retour"><a href="index.php?action=admin">Retour à la page principale</a></p>
 <section id="creationSection">
 	<form action="index.php?action=createPost" method="post">
 		<div>
@@ -21,9 +20,6 @@
 		</div>
 	</form>
 </section>
-    <form method="post">
-      
-    </form>
 
 <?php $content = ob_get_clean(); ?>
 

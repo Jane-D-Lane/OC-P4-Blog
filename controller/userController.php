@@ -80,4 +80,3 @@ function access() {
 	require('view/userView/nonAccess.php');
 }
 
-

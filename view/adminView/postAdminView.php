@@ -4,7 +4,7 @@
 
 <?php ob_start(); ?>
 
-<p><a href="index.php?action=admin">Retour à la page admin</a></p>
+<p class="retour"><a href="index.php?action=admin">Retour à la page admin</a></p>
 
 <section id="postPage">
 	<div class="new">

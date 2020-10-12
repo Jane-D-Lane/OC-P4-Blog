@@ -23,16 +23,18 @@ session_start();
 		<div id="main">
 			<nav>
 				<ul>
-					<li><a href="index.php">Accueil</a></li>
-					<li><a href="index.php">Chapitres</a></li>
-					<li><a href="index.php?action=connection">Espace membre</a></li>
-					<li><a href="index.php?action=admin">Espace admin</a></li>
-					<li><a href="#">Contact</a></li>
+					<div>
+						<li><a href="index.php">Chapitres</a></li>
+						<li><a href="index.php?action=connection">Espace membre</a></li>
+						<li><a href="index.php?action=admin">Espace admin</a></li>
+					</div>
 <?php
 if(isset($_SESSION['id'])) {
 ?>
-					<li id="userMessage">Bonjour <?= $_SESSION['pseudo'] ?></li>
-					<li><a href="index.php?action=logOut">Deconnexion</a></li>
+					<div>
+						<li class="userMessage">Bonjour <?= $_SESSION['pseudo'] ?></li>
+						<li><a href="index.php?action=logOut" class="userMessage">Deconnexion</a></li>
+					</div>
 <?php
 }
 ?>
