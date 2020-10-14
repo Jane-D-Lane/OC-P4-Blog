@@ -9,17 +9,19 @@
 <?php
 //affichage de chaque post
 while($eachPost = $posts->fetch()) {
+	$eachPostContent = substr($eachPost['content'], 0, 200). "...";
 ?>
 	<div class="news">
 		<h3>
 			<?= htmlspecialchars($eachPost['title']) ?>
 			<em>le <?= $eachPost['creation_date_fr'] ?></em>
 		</h3> 
-		<p>
-			<?= nl2br(htmlspecialchars($eachPost['content'])) ?>
+		<br />
+		<p id="contentNews">
+			<?= nl2br(htmlspecialchars($eachPostContent)) ?>
+			<br /><br />
+			<a href="index.php?action=postComm&amp;id=<?= $eachPost['id'] ?>">Lire la suite</a>
 			<br />
-			<br />
-			<em><a href='index.php?action=postComm&amp;id=<?= $eachPost['id'] ?>'>Commentaires</a></em>
 		</p>
 	</div>
 <?php

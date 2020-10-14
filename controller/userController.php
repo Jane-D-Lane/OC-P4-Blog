@@ -14,20 +14,20 @@ function logCheck() {
 
 	if(!empty($_POST['pseudo']) && !empty($_POST['pass']) &&!empty($_POST['passAgain']) && !empty($_POST['email'])) {
 		if($isValid->fetch()) {
-			require("view/userView/inscription.php");
-			echo "Pseudonyme et/ou email déjà utilisé.";
+			require('view/userView/inscription.php');
+			echo '<script>alert(\'Pseudonyme et/ou email déjà utilisé.\')</script>';
 		} else {
 			if($_POST['pass'] == $_POST['passAgain']) {
 				register($_POST['pseudo'], password_hash($_POST['pass'], PASSWORD_DEFAULT), $_POST['email']);
 				
 			} else {
-				require("view/userView/inscription.php");
-				echo 'Erreur : Retapez votre mot de passe';
+				require('view/userView/inscription.php');
+				echo '<script>alert(\'Erreur : Retapez votre mot de passe\')</script>';
 			}
 		}
 	} else {
-		require("view/userView/inscription.php");
-		echo 'Erreur : Tous les champs ne sont pas remplis !';
+		require('view/userView/inscription.php');
+		echo '<script>alert(\'Erreur : Tous les champs ne sont pas remplis !\')</script>';
 	}
 }
 
@@ -52,17 +52,17 @@ function getConnect() {
 	$isPassValid = password_verify($_POST['pass'], $userData['pass']);
 	if(!$userData) {
 		require('view/userView/login.php');
-		echo 'Mauvais identifiant ou mot de passe.';
+		echo '<script>alert(\'Mauvais identifiant ou mot de passe.\')</script>';
 	} else {
 		if($isPassValid) {
 			session_start();
 			$_SESSION['id'] = $userData['id'];
 			$_SESSION['pseudo'] = $_POST['pseudo'];
 			require('view/userView/login.php');
-			echo 'Vous êtes connecté !';
+			echo '<script>alert(\'Vous êtes connecté !\')</script>';
 		} else {
-			require('view.userView/login.php');
-			echo 'Mauvais identifiant ou mot de passe.';
+			require('view/userView/login.php');
+			echo '<script>alert(\'Mauvais identifiant ou mot de passe.\')</script>';
 		}
 	}
 }
@@ -72,7 +72,8 @@ function logOut() {
 	session_start();
 	$_SESSION = array();
 	session_destroy();
-	echo 'Déconnexion !';
+	require('view/userView/login.php');
+	echo '<script>alert(\'Déconnexion !\')</script>';
 }
 
 // Affiche la page d'accès interdit

@@ -26,7 +26,6 @@ session_start();
 					<div>
 						<li><a href="index.php">Chapitres</a></li>
 						<li><a href="index.php?action=connection">Espace membre</a></li>
-						<li><a href="index.php?action=admin">Espace admin</a></li>
 					</div>
 <?php
 if(isset($_SESSION['id'])) {
@@ -48,6 +47,7 @@ if(isset($_SESSION['id'])) {
 				<div id="footer">
 					<p><a href="#">Mentions légales</a></p>
 					<p><a href="#">Politique de confidentialité</a></p>
+					<p><a href="index.php?action=admin">Espace admin</a></p>
 					<p>© 2020 GwenaëllePoirier</p>
 				</div>
 			</footer>

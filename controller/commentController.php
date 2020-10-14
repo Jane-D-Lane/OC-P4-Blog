@@ -9,10 +9,10 @@ function commentCheck() {
 		if(!empty($_POST['author']) && !empty($_POST['comment'])) {
 			addComments($_GET['id'], $_POST['author'], $_POST['comment']);
 		} else {
-			echo 'Erreur : Tous les champs ne sont pas remplis.';
+			echo '<script>alert(\'Erreur : Tous les champs ne sont pas remplis.\')</script>';
 		}
 	} else {
-		echo 'Erreur : Aucun identifiant de billet envoyé.';
+		echo '<script>alert(\'Erreur : Aucun identifiant de billet envoyé.\')</script>';
 	}
 }
 
@@ -31,12 +31,5 @@ function addComments($postId, $author, $comment) {
 function addFlag() {
 	$commentManager = new CommentManager();
 	$flagComm = $commentManager->flag($_GET['id']);
-	echo 'Commentaire signalé !';
-}
-
-// Annuler le signalement d'un commentaire
-function removeFlag() {
-	$commentManager = new CommentManager();
-	$unflagComm = $commentManager->unFlag($_GET['id']);
-	echo 'Commentaire non signalé !';
+	echo '<script>alert(\'Commentaire signalé !\')</script>';
 }

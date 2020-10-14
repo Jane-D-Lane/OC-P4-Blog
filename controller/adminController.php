@@ -39,7 +39,7 @@ function postCreation() {
 		}
 	} else {
 		require('view/adminView/createPost.php');
-		echo 'Erreur : Tous les champs ne sont pas remplis.';
+		echo '<script>alert(\'Erreur : Tous les champs ne sont pas remplis.\')';
 	} 
 }
 
@@ -76,4 +76,11 @@ function commDelete() {
 	$delete = $commentManager->deleteComment($_GET['id']);
 
 	header('Location: index.php?action=admin');
+}
+
+
+// Annuler le signalement d'un commentaire
+function removeFlag() {
+	$commentManager = new CommentManager();
+	$unflagComm = $commentManager->unFlag($_GET['id']);
 }

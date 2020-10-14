@@ -3,9 +3,10 @@
 <?php $titlePage = "Se connecter"; ?>
 
 <?php ob_start(); ?>
-
-<p>Accès réservé !</p>
-<p>Veuillez vous <a href="index.php?action=connection">connecter</a>.</p>
+<div class="nonAccess">
+	<p>Accès réservé !</p>
+	<p>Veuillez vous <a href="index.php?action=connection">connecter</a>.</p>
+</div>
 
 <?php $content = ob_get_clean(); ?>
 
