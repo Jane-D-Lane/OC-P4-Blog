@@ -83,4 +83,6 @@ function commDelete() {
 function removeFlag() {
 	$commentManager = new CommentManager();
 	$unflagComm = $commentManager->unFlag($_GET['id']);
+
+	header('Location: index.php?action=admin');
 }

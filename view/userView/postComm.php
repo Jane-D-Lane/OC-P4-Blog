@@ -31,7 +31,7 @@ if(isset($_SESSION['pseudo'])) {
 		</div>
 		<div>
 			<label for="comment">Votre commentaire</label><br />
-			<textarea name="comment" id="comment"></textarea>
+			<textarea name="comment" id="comment" cols="40" rows="8"></textarea>
 		</div>
 		<div>
 			<input type="submit" name="Envoyer">

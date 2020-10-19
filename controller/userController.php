@@ -37,7 +37,7 @@ function register($pseudo, $pass, $email) {
 	$userData = $userManager->userRegister($pseudo, $pass, $email);
 
 	require("view/userView/inscription.php");
-	echo "Inscription valide !";
+	echo '<script>alert(\'Inscription valide.\')</script>';
 }
 
 // Affiche la page de connexion 

@@ -1,0 +1,14 @@
+@media (max-width: 710px) {
+	#postPage, #commentSection {
+		width: 80%;
+	}
+	#footer {
+		height: 100px;
+	}
+}
+
+@media (max-width: 370px) {
+	#footer {
+		height: 200px;
+	}
+}

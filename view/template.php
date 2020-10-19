@@ -9,12 +9,13 @@ session_start();
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="public/blog.css">
 		<link rel="stylesheet" type="text/css" href="public/admin.css">
+		<link rel="stylesheet" type="text/css" href="public/responsive.css">
 		<script src="https://cdn.tiny.cloud/1/32ttkup4u4fx1o9d6fjnucjqug3uriest95tajwl7mg06dt3/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 		<script>
       		tinymce.init({
         		selector: '#mytextarea',
-        		width: 600,
-    			height: 300,
+        		width: 800,
+    			height: 500,
       		});
     	</script>
 		<title><?= $title ?></title>
