@@ -4,7 +4,7 @@
 
 <?php ob_start(); ?>
 <section id="adminPage">
-	<h2>Bienvenue sur l'espace administrateur !</h2></br>
+	<h2>Bienvenue sur l'espace administrateur !</h2><br>
 	<p>Liste des billets :</p>
 <?php
 //affichage liste des billets 
@@ -21,8 +21,8 @@ while($eachPost = $posts->fetch()) {
 }
 $posts->closeCursor();
 ?> 
-	</br>
-	<div id="postCreation"><a href="index.php?action=createPost">Créer un nouveau billet</a></div></br>
+	<br>
+	<div id="postCreation"><a href="index.php?action=createPost">Créer un nouveau billet</a></div><br>
 
 	<p>Liste des commentaires :</p>
 <?php
@@ -31,7 +31,7 @@ while($eachComment = $allComments->fetch()) {
 ?>
 		<table>
 			<tr>
-				<td><?= htmlspecialchars($eachComment['author']) ?></td>
+				<td><?= htmlspecialchars($eachComment['pseudo_user']) ?></td>
 				<td class="commentContent"><?= nl2br(htmlspecialchars($eachComment['comment'])) ?></td>
 				<td><?= $eachComment['comment_date_fr'] ?></td>
 				<td><a href="index.php?action=deleteComm&amp;id=<?= $eachComment['id'] ?>">Supprimer</a></td>

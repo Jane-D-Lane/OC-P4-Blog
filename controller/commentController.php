@@ -6,8 +6,8 @@ require_once('model/CommentManager.php');
 // Contrôle les champs d'un commentaire
 function commentCheck() {
 	if(isset($_GET['id']) && $_GET['id'] > 0) {
-		if(!empty($_POST['author']) && !empty($_POST['comment'])) {
-			addComments($_GET['id'], $_POST['author'], $_POST['comment']);
+		if(!empty($_POST['pseudo_user']) && !empty($_POST['comment'])) {
+			addComments($_GET['id'], $_SESSION['id'], $_POST['pseudo_user'], $_POST['comment']);
 		} else {
 			echo '<script>alert(\'Erreur : Tous les champs ne sont pas remplis.\')</script>';
 		}
@@ -17,9 +17,9 @@ function commentCheck() {
 }
 
 // Ajoute un commentaire 
-function addComments($postId, $author, $comment) {
+function addComments($postId, $userId, $author, $comment) {
 	$commentManager = new CommentManager();
-	$affectedLines = $commentManager->postComments($postId, $author, $comment);
+	$affectedLines = $commentManager->postComments($postId, $userId, $author, $comment);
 	if($affectedLines === false) {
 		die('Impossible d\'ajouter le commentaire.');
 	} else {

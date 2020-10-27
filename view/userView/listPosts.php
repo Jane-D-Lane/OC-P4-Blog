@@ -18,7 +18,7 @@ while($eachPost = $posts->fetch()) {
 		</h3> 
 		<br />
 		<p id="contentNews">
-			<?= nl2br(htmlspecialchars($eachPostContent)) ?>
+			<?= nl2br($eachPostContent) ?>
 			<br /><br />
 			<a href="index.php?action=postComm&amp;id=<?= $eachPost['id'] ?>">Lire la suite</a>
 			<br />

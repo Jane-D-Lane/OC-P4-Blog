@@ -8,11 +8,11 @@
 	<form action="index.php?action=connection" method="post">
 		<div>
 			<label for="pseudo">Votre identifiant</label>
-			<input type="text" name="pseudo" />
+			<input type="text" name="pseudo" id="pseudo" />
 		</div>
 		<div>
 			<label for="password">Votre mot de passe</label>
-			<input type="password" name="pass" />	
+			<input type="password" name="pass" id="password" />	
 		</div>
 		<div>
 			<input type="submit" name="goConnect" value="Se connecter">

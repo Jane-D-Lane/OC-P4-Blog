@@ -37,17 +37,18 @@ nav {
 	opacity: 90%;
 }
 
+#nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
 ul {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	flex-direction: row;
 	list-style-type: none;
 }
-
-ul div {
-	display: flex;
-	flex-direction: row;
-} 
 
 li {
 	padding: 5px;
@@ -108,7 +109,7 @@ h1, h2, h3 {
 	background-color: #cadee9;
 } 
 
-#commentSection {
+.commentSection {
 	padding: 10px;
 
 }

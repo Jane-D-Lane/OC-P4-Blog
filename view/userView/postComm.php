@@ -15,7 +15,7 @@
 			<em>le <?= $post['creation_date_fr'] ?></em>
 		</h3>
 		<p>
-			<?= nl2br(htmlspecialchars($post['content'])) ?>
+			<?= nl2br($post['content']) ?>
 		</p>
 	</div>
 </section>
@@ -23,11 +23,11 @@
 <?php
 if(isset($_SESSION['pseudo'])) {	
 ?>
-<section id="commentSection">
+<section class="commentSection">
 	<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
 		<div>
-			<label for="author">Votre nom</label><br />
-			<input type="text" name="author" id="author">
+			<label for="pseudo_user">Votre nom</label><br />
+			<input type="text" name="pseudo_user" id="pseudo_user" value="<?= $_SESSION['pseudo'] ?>">
 		</div>
 		<div>
 			<label for="comment">Votre commentaire</label><br />
@@ -37,18 +37,17 @@ if(isset($_SESSION['pseudo'])) {
 			<input type="submit" name="Envoyer">
 		</div>
 	</form>
-	<div class="commentsList">
 </section>
 <?php
 }
 ?>
 
-<section id="commentSection">
+<section class="commentSection">
 <?php
 while($comment = $comments->fetch()) {
 ?>
 		<p>
-			<strong><?= htmlspecialchars($comment['author']) ?></strong>
+			<strong><?= htmlspecialchars($comment['pseudo_user']) ?></strong>
 			<em>le <?= $comment['comment_date_fr'] ?></em>
 			<span>(<a href="index.php?action=addFlag&amp;id=<?= $comment['id'] ?>" class="warningLink">Signaler</a>)</span>
 		</p>

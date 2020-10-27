@@ -8,10 +8,10 @@
 <section id="creationSection">
 	<form action="index.php?action=createPost" method="post">
 		<div>
-			<label for="title">Titre</label></br>
+			<label for="title">Titre</label><br>
 			<input size="50" type="text" name="title" id="title">
 		</div>
-			<label for="content">Contenu</label></br>
+			<label for="mytextarea">Contenu</label><br>
 		<div class="textarea">
 			<textarea id="mytextarea" name="content"></textarea>
 		</div>

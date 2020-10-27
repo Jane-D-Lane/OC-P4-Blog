@@ -3,7 +3,7 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,22 +23,24 @@ session_start();
 	<body>
 		<div id="main">
 			<nav>
-				<ul>
-					<div>
+				<div id="nav">
+					<ul>
 						<li><a href="index.php">Chapitres</a></li>
 						<li><a href="index.php?action=connection">Espace membre</a></li>
-					</div>
+					</ul>
+					
 <?php
 if(isset($_SESSION['id'])) {
 ?>
-					<div>
-						<li class="userMessage">Bonjour <?= $_SESSION['pseudo'] ?></li>
+					<ul>
+						<li class="userMessage">Bonjour <?= htmlspecialchars($_SESSION['pseudo']) ?></li>
 						<li><a href="index.php?action=logOut" class="userMessage">Deconnexion</a></li>
-					</div>
+					</ul>
+
 <?php
 }
 ?>
-				</ul>
+				</div>	
 			</nav>
 			<header>
 				<h1><?= $titlePage ?></h1>

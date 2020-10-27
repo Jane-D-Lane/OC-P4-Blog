@@ -16,24 +16,36 @@ try {
 			postAdminView();
 
 		} elseif($_GET['action'] == 'createPost') {
-			if(isset($_POST['creation'])) {
-				postCreation();
+			if($_SESSION['pseudo'] = 'admin') {
+				if(isset($_POST['creation'])) {
+					postCreation();
+				} else {
+					creationForm();
+				}
 			} else {
-				creationForm();
+				access();
 			}
 
 		} elseif($_GET['action'] == 'updatePost') {
-			if(isset($_POST['modification'])) {
-				postUpdate();
-			} else { 
-				postUpdateView();
+			if($_SESSION['pseudo'] = 'admin') {
+				if(isset($_POST['modification'])) {
+					postUpdate();
+				} else { 
+					postUpdateView();
+				}
+			} else {
+				access();
 			}
 
 		} elseif($_GET['action'] == 'deletePost') {
-			if(isset($_GET['id']) && $_GET['id'] > 0) {
-				postDelete();
+			if($_SESSION['pseudo'] = 'admin') {
+				if(isset($_GET['id']) && $_GET['id'] > 0) {
+					postDelete();
+				} else {
+					throw new Exception("Aucun identifiant de billet envoyé");
+				}
 			} else {
-				throw new Exception("Aucun identifiant de billet envoyé");
+				access();
 			}
 
 		} elseif($_GET['action'] == 'postComm') {

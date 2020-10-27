@@ -8,19 +8,19 @@
 	<form action="index.php?action=register" method="post">
 		<div>
 			<label for="pseudo">Pseudo</label>
-			<input type="text" name="pseudo" />
+			<input type="text" name="pseudo" id="pseudo" />
 		</div>
 		<div>
 			<label for="pass">Mot de passe</label>
-			<input type="password" name="pass" />	
+			<input type="password" name="pass" id="pass" />	
 		</div>
 		<div>
 			<label for="passAgain">Retapez votre mot de passe</label>
-			<input type="password" name="passAgain" />
+			<input type="password" name="passAgain" id="passAgain" />
 		</div>
 		<div>
 			<label for="email">Adresse email</label>
-			<input type="email" name="email" />
+			<input type="email" name="email" id="email" />
 		</div>
 		<div>
 			<input type="submit" name="inscription" value="S'inscrire">
